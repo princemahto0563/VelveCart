@@ -1,0 +1,19 @@
+{
+  "name": "VelvetCart",
+  "short_name": "VelvetCart",
+  "description": "Luxury shopping reimagined — jewellery, fashion, beauty & home decor",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f0e8",
+  "theme_color": "#0a0a0a",
+  "categories": ["shopping", "lifestyle"],
+  "lang": "en-IN",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable any" }
+  ],
+  "screenshots": [
+    { "src": "/screenshot-mobile.jpg", "sizes": "390x844", "type": "image/jpeg", "form_factor": "narrow" }
+  ]
+}

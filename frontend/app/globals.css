@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans bg-white text-velvet-black antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: rgba(201,169,110,0.25); }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #f5f0e8; }
+  ::-webkit-scrollbar-thumb { background: #c9a96e; border-radius: 3px; }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-velvet-black text-white text-xs tracking-luxury uppercase px-8 py-4
+           transition-all duration-300 hover:bg-velvet-surface active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed rounded-sm;
+  }
+  .btn-gold {
+    @apply bg-gold text-white text-xs tracking-luxury uppercase px-8 py-4
+           transition-all duration-300 hover:bg-gold-dark active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed rounded-sm;
+  }
+  .btn-outline {
+    @apply border border-velvet-black text-velvet-black text-xs tracking-luxury uppercase px-8 py-4
+           transition-all duration-300 hover:bg-velvet-black hover:text-white active:scale-95 rounded-sm;
+  }
+  .btn-ghost {
+    @apply border border-white/25 text-white/70 text-xs tracking-luxury uppercase px-8 py-4
+           transition-all duration-300 hover:border-gold hover:text-gold rounded-sm;
+  }
+
+  /* Cards */
+  .product-card {
+    @apply bg-white border border-black/5 rounded overflow-hidden
+           transition-all duration-300 hover:-translate-y-1 hover:shadow-luxury cursor-pointer;
+  }
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/15 rounded-lg;
+  }
+
+  /* Inputs */
+  .input-luxury {
+    @apply w-full border border-black/10 rounded-sm px-4 py-3 text-sm text-velvet-black
+           placeholder:text-velvet-muted focus:outline-none focus:border-gold
+           transition-colors duration-200 bg-white;
+  }
+  .input-dark {
+    @apply w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 text-sm text-white
+           placeholder:text-white/30 focus:outline-none focus:border-gold/50
+           transition-colors duration-200;
+  }
+
+  /* Section layouts */
+  .section-pad { @apply py-16 px-[5vw]; }
+  .section-tag {
+    @apply text-[0.65rem] tracking-widest uppercase text-gold mb-3;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-light text-velvet-black leading-tight;
+  }
+  .section-title-white {
+    @apply font-serif text-3xl md:text-4xl font-light text-white leading-tight;
+  }
+
+  /* Skeleton loader */
+  .skeleton {
+    @apply bg-gradient-to-r from-velvet-cream via-velvet-beige to-velvet-cream
+           bg-[length:200%_100%] animate-shimmer rounded;
+  }
+
+  /* Status badges */
+  .badge-delivered { @apply bg-green-50 text-green-700 text-[0.65rem] px-2 py-1 rounded-sm tracking-wide; }
+  .badge-processing { @apply bg-gold/10 text-gold text-[0.65rem] px-2 py-1 rounded-sm tracking-wide; }
+  .badge-shipped { @apply bg-blue-50 text-blue-700 text-[0.65rem] px-2 py-1 rounded-sm tracking-wide; }
+  .badge-pending { @apply bg-red-50 text-red-600 text-[0.65rem] px-2 py-1 rounded-sm tracking-wide; }
+  .badge-cancelled { @apply bg-gray-100 text-gray-500 text-[0.65rem] px-2 py-1 rounded-sm tracking-wide; }
+
+  /* Marquee */
+  .marquee-container { @apply overflow-hidden whitespace-nowrap; }
+  .marquee-track { @apply inline-flex gap-12 animate-marquee; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .hide-arrows input[type=number]::-webkit-outer-spin-button,
+  .hide-arrows input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
+}
