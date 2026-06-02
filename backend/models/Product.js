@@ -85,7 +85,6 @@ productSchema.virtual('discountPercent').get(function () {
 });
 
 // ─── Indexes ──────────────────────────────────────────────────────────────────
-productSchema.index({ slug: 1 });
 productSchema.index({ category: 1 });
 productSchema.index({ isFeatured: 1 });
 productSchema.index({ isFlashSale: 1 });

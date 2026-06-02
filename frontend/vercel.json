@@ -24,7 +24,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://velvecart.onrender.com/api/:path*"
+      "destination": "https://velvetcart-api.onrender.com/api/:path*"
     }
   ]
 }
